@@ -1,7 +1,7 @@
 # AutoNMR-Streamlined-NMR-Chemical-Shifts-via-ISiCLE-and-NWChem
 This repository aims to design and implement an automated workflow to streamline NMR chemical shift calculations using [NWChem](https://www.nwchem-sw.org/). It also involves developing a user-friendly Python API to define molecular systems and specify NMR parameters, simplifying the process and making it more efficient for researchers.
 
-### The primary objectives of this repository are as follows:
+### Primary objectives
 - Design and implementation of an automated workflow that streamlines the process of NMR chemical shift calculations using [NWChem](https://www.nwchem-sw.org/)
 - Development of a user-friendly [Python](https://www.python.org/) API (Application Programming Interface) for molecular system definition and NMR parameter specification
 
@@ -34,4 +34,9 @@ The following tutorial aims to downlaod the NWChem on Linux Operating System. Fo
   sudo apt install nwchem
   ```
 - Now you have succesfully installed NWChem on your system.
-  
+## Running the Automated Python Script
+In this tutorial we will discuss how to run the Automated Python Script NWchem.py available in this repository to generate the NMR Chemical Shifts of atoms present in the compound. Here are the steps you should follow to get the chemical shifts.
+
+- #### Step 1:
+  Create a .xlsx ( Excel file ) containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named smiles.xlsx is in this repository   
+
