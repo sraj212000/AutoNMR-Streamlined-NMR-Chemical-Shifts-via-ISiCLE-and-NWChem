@@ -1,7 +1,7 @@
 # AutoNMR-Streamlined-NMR-Chemical-Shifts-via-ISiCLE-and-NWChem
 This repository aims to design and implement an automated workflow to streamline NMR chemical shift calculations using [NWChem](https://www.nwchem-sw.org/). It also involves developing a user-friendly Python API to define molecular systems and specify NMR parameters, simplifying the process and making it more efficient for researchers.
 
-### Primary objectives
+### Primary Objectives
 - Design and implementation of an automated workflow that streamlines the process of NMR chemical shift calculations using [NWChem](https://www.nwchem-sw.org/)
 - Development of a user-friendly [Python](https://www.python.org/) API (Application Programming Interface) for molecular system definition and NMR parameter specification
 
@@ -35,8 +35,33 @@ The following tutorial aims to downlaod the NWChem on Linux Operating System. Fo
   ```
 - Now you have succesfully installed NWChem on your system.
 ## Running the Automated Python Script
-In this tutorial we will discuss how to run the Automated Python Script NWchem.py available in this repository to generate the NMR Chemical Shifts of atoms present in the compound. Here are the steps you should follow to get the chemical shifts.
+In this tutorial we will discuss how to run the Automated Python Script NWchem_Run.py available in this repository to generate the NMR Chemical Shifts of atoms present in the compound. Here are the steps you should follow to get the chemical shifts.
 
 - #### Step 1:
-  Create a .xlsx ( Excel file ) containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named smiles.xlsx is in this repository   
+  Download the python script NWchem_Run.py available in this repository in a folder in home directory ( say "raj" ).
+  Navigate the terminal to the created directory ( here "raj" ). The terminal looks as shown below.
+    
+- #### Step 2:
+  Create a .xlsx ( Excel file ) in the same directory ( here "raj" )  containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named smiles.xlsx is in this repository.      
 
+- #### Step 3:
+  Run the following command in terminal to get the output. Make sure to provide the .xlsx file containing smiles as a command line argument as shown below.
+  ```
+  python NWchem.py smiles.xlsx
+  ```
+
+  ## Output of the Python Script
+  As soon as we run the python script in the terminal , the terminal begins to run the NWChem module for each of the smiles code provided in the smiles.xlsx list. Once the run is over, the output file named    output.xlsx is generated in the same directory ( here "raj"). The sample of the output file is present in this repository named output.xlsx.
+  The content of the output file can be seen below.
+  
+  
+
+
+
+
+
+
+
+
+
+  
