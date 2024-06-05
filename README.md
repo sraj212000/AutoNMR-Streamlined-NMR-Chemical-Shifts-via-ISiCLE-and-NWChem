@@ -48,9 +48,9 @@ In this tutorial we will discuss how to run the Automated Python Script [NWchem_
 
 -  Step 3:
   Run the following command in terminal to get the output. Make sure to provide the .xlsx file containing smiles as a command line argument as shown below.
-  ```
-  python NWchem.py smiles.xlsx
-  ```
+ ```
+    python NWchem.py smiles.xlsx
+ ```
 
   ## Output of the Python Script
   As soon as we run the python script in the terminal , the terminal begins to run the NWChem module for each of the smiles code provided in the smiles.xlsx list. Once the run is over, the output file     named output.xlsx is generated in the same directory ( here "raj"). The sample of the output file is present in this repository named [output.xlsx](output.xlsx).
