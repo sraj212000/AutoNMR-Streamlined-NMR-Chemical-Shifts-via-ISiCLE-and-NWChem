@@ -21,3 +21,17 @@ NWChem software can handle:
  - Properties and relativistic effects
    
 NWChem consists of independent modules that perform the various functions of the code. Examples of modules include the input parser, SCF energy, SCF analytic gradient, DFT energy, etc.. For details about the NWChem you can visit the NWChem [Documentation Page](https://nwchemgit.github.io/Compiling-NWChem.html) here.
+
+## Installation of NWChem on Linux OS
+The following tutorial aims to downlaod the NWChem on Linux Operating System. For Windows and macOS you can visit the [NWChem website](https://nwchemgit.github.io/Download.html) for reference.
+- Open the Terminal at home directory
+- Update the package list by running the following command
+  ```
+  sudo apt update
+  ```
+- Install NWChem by running following command
+  ```
+  sudo apt install nwchem
+  ```
+- Now you have succesfully installed NWChem on your system.
+  
