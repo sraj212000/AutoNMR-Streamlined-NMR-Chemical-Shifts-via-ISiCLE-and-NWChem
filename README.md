@@ -59,6 +59,9 @@ In this tutorial we will discuss how to run the Automated Python Script NWchem_R
   ![Output of Python](Images/output1.png)
 
   Here you can see it generates three columns, first column 'filename' tells about the smilecode of the file whose atom's chemical shift is generated. Second column tells about the atom name whose chemical shift is calculated and third column gives the information about the NMR Chemical shift value of the respective atom of the file.
+
+  ### Note
+  The reference compund taken here in these calculation is TMS who chemical shift is found to be zero ppm
   
   
 
