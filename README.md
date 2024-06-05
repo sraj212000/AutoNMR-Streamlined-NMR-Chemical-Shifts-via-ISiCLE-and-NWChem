@@ -35,7 +35,7 @@ The following tutorial aims to downlaod the NWChem on Linux Operating System. Fo
   ```
 - Now you have succesfully installed NWChem on your system.
 ## Running the Automated Python Script
-In this tutorial we will discuss how to run the Automated Python Script NWchem_Run.py available in this repository to generate the NMR Chemical Shifts of atoms present in the compound. Here are the steps you should follow to get the chemical shifts.
+In this tutorial we will discuss how to run the Automated Python Script [NWchem_Run.py](NWchem_run.py) available in this repository to generate the NMR Chemical Shifts of atoms present in the compound. Here are the steps you should follow to get the chemical shifts.
 
 - #### Step 1:
   Download the python script NWchem_Run.py available in this repository in a folder in home directory ( say "raj" ).
