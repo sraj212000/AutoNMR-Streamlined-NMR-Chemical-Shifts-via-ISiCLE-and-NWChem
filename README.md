@@ -42,7 +42,7 @@ In this tutorial we will discuss how to run the Automated Python Script [NWchem_
   Navigate the terminal to the created directory ( here "raj" ). 
   
 - #### Step 2:
-  Create a .xlsx ( Excel file ) in the same directory ( here "raj" )  containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named        smiles.xlsx is in this repository. The smiles.xlsx file is shown below.
+  Create a .xlsx ( Excel file ) in the same directory ( here "raj" )  containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named [smiles.xlsx](smiles.xlsx) is in this repository. The smiles.xlsx file is shown below.
 
   ![Input file](Images/input1.png)
 
