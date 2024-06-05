@@ -37,16 +37,16 @@ The following tutorial aims to downlaod the NWChem on Linux Operating System. Fo
 ## Running the Automated Python Script
 In this tutorial we will discuss how to run the Automated Python Script [NWchem_Run.py](NWchem_run.py) available in this repository to generate the NMR Chemical Shifts of atoms present in the compound. Here are the steps you should follow to get the chemical shifts.
 
-- #### Step 1:
+-  Step 1:
   Download the python script [NWchem_Run.py](NWchem_run.py) available in this repository in a folder in home directory ( say "raj" ).
   Navigate the terminal to the created directory ( here "raj" ). 
   
-- #### Step 2:
-  Create a .xlsx ( Excel file ) in the same directory ( here "raj" )  containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named [smiles.xlsx](smiles.xlsx) is in this repository. The smiles.xlsx file is shown below.
+-  Step 2:
+  Create a .xlsx ( Excel file ) in the same directory ( here "raj" )  containing all list of Canonical Smiles Code of Compound whose NMR Chemical Shift is to be calculated. The Sample file named    [smiles.xlsx](smiles.xlsx) is in this repository. The smiles.xlsx file is shown below.
 
-  ![Input file](Images/input1.png)
+- ![Input file](Images/input1.png)
 
-- #### Step 3:
+-  Step 3:
   Run the following command in terminal to get the output. Make sure to provide the .xlsx file containing smiles as a command line argument as shown below.
   ```
   python NWchem.py smiles.xlsx
@@ -60,7 +60,7 @@ In this tutorial we will discuss how to run the Automated Python Script [NWchem_
 
   Here you can see it generates three columns, first column 'filename' tells about the smilecode of the file whose atom's chemical shift is generated. Second column tells about the atom name whose chemical shift is calculated and third column gives the information about the NMR Chemical shift value of the respective atom of the file.
 
-  #### Note
+  Note
   The reference compund taken here in these calculation is TMS who chemical shift is found to be zero ppm
   
   
