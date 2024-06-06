@@ -1,4 +1,4 @@
-# AutoNMR-Streamlined-NMR-Chemical-Shifts-via-ISiCLE-and-NWChem
+# AutoNMR - Streamlined NMR Chemical-Shifts via ISiCLE and NWChem
 This repository aims to design and implement an automated workflow to streamline NMR chemical shift calculations using [NWChem](https://www.nwchem-sw.org/). It also involves developing a user-friendly Python API to define molecular systems and specify NMR parameters, simplifying the process and making it more efficient for researchers.
 
 ## Primary Objectives
@@ -61,9 +61,16 @@ In this tutorial we will discuss how to run the Automated Python Script [NWchem_
   Here you can see it generates three columns, first column 'filename' tells about the smilecode of the file whose atom's chemical shift is generated. Second column tells about the atom name whose chemical shift is calculated and third column gives the information about the NMR Chemical shift value of the respective atom of the file.
 
   Note
-  The reference compund taken here in these calculation is TMS who chemical shift is found to be zero ppm
+  The reference compund taken here in these calculation is TMS whose chemical shift is found to be zero ppm
   
-  
+   ## Getting the Chemical Shift Plot
+   In this section we will be generating the chemical shift plot from the output obatined using a python script Plot.py.
+
+   In order to do this , run the python script Plot.py ( available in this repository ) in the terminal in the same directory where previous calculations where performed and provide the name of the output file ( here output.xlsx ) as a command line argument. 
+   The command line for running the script is shown below
+   ```
+python Plot.py output.xlsx
+```
 
 
 
