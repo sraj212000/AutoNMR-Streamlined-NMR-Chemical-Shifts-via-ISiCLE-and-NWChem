@@ -24,21 +24,35 @@ def generate_3d_coordinates(smiles, output_file):
             x, y, z = position.x, position.y, position.z
             print(f"   {atom.GetSymbol():<2s} {x:>10.4f} {y:>10.4f} {z:>10.4f}", file=f)   
         # Print the end of the geometry section and other parts
-        print(
-            "end\n\n\nbasis spherical\n* library 6-311G\nend\n\n"
-            "dft\n"
-            "direct\n"
-            "xc pbe0\n"
-            'noprint "final vectors analysis" multipole\n'
-            "end\n\n"
-            f"set geometry {smiles}\n"
-            "task dft optimize\n\n"
-            "property\n"
-            "   shielding\n"
-            "end\n\n"
-            "task dft property\n",
-            file=f
+        f.write(
+        "end\n\n\nbasis spherical\n* library 6-311G\nend\n\n"
+        "driver\n"
+        "  tight\n  maxiter 200\n  xyz final\n"
+        "end\n\n"
+        "relativistic\n"
+        "  zora on\n"
+        "  zora:cutoff_NMR 1d-8\n"
+        "  zora:cutoff 1d-30\n"
+        "end\n\n"
+        "dft\n"
+        "  direct\n"
+        "  grid fine\n"
+        f" xc {xc_functional}\n"
+        "  mult 1\n"
+        '  noprint "final vectors analysis" multipole\n'
+        "end\n\n"
+        f"set geometry {smiles}\n"
+        "task dft optimize\n\n"
+        "property\n"
+        "   shielding\n"
+        "end\n\n"
+        
+        "cosmo\n"
+        "   solvent cdcl3\n"
+        "end\n\n"
+        "task dft property\n"
         )
+
     
 def run_nwchem(commands):
     print("Running NWChem...")
@@ -62,10 +76,17 @@ def run(smile):
 
 print(" While Running the command Enter 1st argument as .xlsx file containing smiles code in single row ")
 
-if(len(sys.argv) > 2 ):
+if len(sys.argv) > 3:
     print("Error in Argument Declaration")
-elif(len(sys.argv)==1):
-    print("Please enter the arguemnet as .xlsx as asked above ")
+elif len(sys.argv) == 1:
+    print("Please enter the argument as .xlsx as asked above")
+else:
+    # Set default xc_functional to "pbe0"
+    xc_functional = "pbe0"
+    
+    # Check if the second argument is provided
+    if len(sys.argv) > 2:
+        xc_functional = sys.argv[2]
 
 df = pd.read_excel(sys.argv[1], usecols='A')
 l1 = []
@@ -75,10 +96,10 @@ length = len(l1)
 for i in range(length):
 	# Generate NWChem input and output file names
 	smile=l1[i][0]
-	output_file = "{}.nw".format(smile)
-	output_file_name = "{}.out".format(smile)	
+	output_file = "{}.nw".format(smile+" "+xc_functional)
+	output_file_name = "{}.out".format(smile+" "+xc_functional)	
 	generate_3d_coordinates(smile, output_file)
-	run(smile)
+	run(smile+" "+xc_functional)
 	# Build NWChem command
 	nwchem_command = "nwchem {} > {}".format(output_file, output_file_name)
 	# Build final command with additional options
@@ -94,8 +115,8 @@ out_files = [filename for filename in os.listdir(script_dir) if filename.endswit
 
 # Reference values for chemical shifts
 reference_values = {
-    'C': 195.4494,
-    'H': 32.7715
+    'C': 52.5022,
+    'H': 25.6831
 }
 
 shift =[]
