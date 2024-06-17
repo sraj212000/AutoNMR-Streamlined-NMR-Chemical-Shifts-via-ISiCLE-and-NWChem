@@ -7,6 +7,18 @@ import pandas as pd
 import re
 import os
 
+
+"""
+def generate_3d_coordinates(smiles, output_file):
+
+    Generates a NWChem input file with 3D coordinates for the given SMILES string.
+
+    Args:
+        smiles (str): The SMILES string representing the molecule.
+        output_file (str): The path to the output NWChem input file.
+ """
+
+
 def generate_3d_coordinates(smiles, output_file):
     molecule = Chem.MolFromSmiles(smiles)
     molecule = Chem.AddHs(molecule)
@@ -52,7 +64,15 @@ def generate_3d_coordinates(smiles, output_file):
         "end\n\n"
         "task dft property\n"
         )
+	    
+"""
+def run_nwchem(commands):
 
+    Runs NWChem with the provided commands.
+
+    Args:
+        commands (list): A list of commands to be executed by NWChem.
+"""
     
 def run_nwchem(commands):
     print("Running NWChem...")
@@ -62,6 +82,19 @@ def run_nwchem(commands):
     execution_time = end_time - start_time
     print("NWChem execution time: {:.2f} seconds".format(execution_time), file=sys.stderr)
 
+
+
+"""
+def run(smile):
+    # Make own character set and pass this as argument in compile method
+    Generates NWChem input and output files, runs NWChem, and extracts chemical shifts.
+
+    Args:
+        smile (str): The SMILES string representing the molecule.
+
+    Returns:
+        tuple: A tuple containing the NWChem input file path and output file path.
+    """
 def run(smile):
     # Make own character set and pass this as argument in compile method
     global output_file
